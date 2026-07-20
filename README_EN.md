@@ -2,6 +2,20 @@
 
 A portable, installation-free Windows application that displays the currently playing track in OBS. Its Dynamic Neon design extracts a suitable accent color locally from the album artwork.
 
+## Screenshots
+
+### Dynamic Neon widget
+
+![Dynamic Neon OBS widget](docs/images/widget-neon.png)
+
+### Control panel
+
+![OBS Now Playing control panel](docs/images/control-panel.png)
+
+### Settings
+
+![OBS Now Playing settings](docs/images/settings.png)
+
 ## Starting the application
 
 The control panel starts in Turkish when the Windows display language is Turkish, and in English for every other language. Use the `TR` and `ENG` buttons in the upper-right corner to switch languages without restarting the application.

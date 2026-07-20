@@ -2,6 +2,20 @@
 
 Windows'ta çalan şarkıyı OBS üzerinde gösteren, kurulum gerektirmeyen taşınabilir uygulamadır. Dinamik Neon tema albüm kapağından uygun vurgu rengini yerel olarak çıkarır.
 
+## Ekran görüntüleri
+
+### Dinamik Neon widget
+
+![Dinamik Neon OBS widget](docs/images/widget-neon.png)
+
+### Kontrol paneli
+
+![OBS Now Playing kontrol paneli](docs/images/control-panel.png)
+
+### Ayarlar
+
+![OBS Now Playing ayarları](docs/images/settings.png)
+
 ## Başlatma
 
 Uygulama Windows dili Türkçeyse Türkçe, diğer tüm sistem dillerinde İngilizce açılır. Kontrol panelinin sağ üstündeki `TR` ve `ENG` düğmeleriyle dili uygulamayı yeniden başlatmadan değiştirebilirsin.

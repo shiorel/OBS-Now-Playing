@@ -4,6 +4,20 @@
 
 A portable, installer-free Windows now-playing widget for OBS Studio. It reads Windows media sessions and displays the active track in a compact 400×100 Dynamic Neon browser source.
 
+## Screenshots
+
+### Dynamic Neon widget
+
+![Dynamic Neon OBS widget](docs/images/widget-neon.png)
+
+### Control panel
+
+![OBS Now Playing control panel](docs/images/control-panel.png)
+
+### Settings
+
+![OBS Now Playing settings](docs/images/settings.png)
+
 ## Features
 
 - Spotify, Apple Music, YouTube Music, Deezer, and browser-media support
