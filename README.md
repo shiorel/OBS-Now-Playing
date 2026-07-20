@@ -16,6 +16,12 @@ OBS Now Playing is open source under the MIT License. You may use, copy, modify,
 
 ![Dynamic Neon OBS widget](docs/images/widget-neon.png)
 
+### In OBS Studio
+
+The widget can be positioned and scaled as a transparent Browser Source over any OBS scene.
+
+![OBS Now Playing used in OBS Studio](docs/images/obs-studio-preview.png)
+
 ### Control panel
 
 ![OBS Now Playing control panel](docs/images/control-panel.png)

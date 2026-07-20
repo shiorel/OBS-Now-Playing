@@ -14,6 +14,12 @@ OBS Now Playing, MIT Lisansı altında açık kaynaklıdır. Projeyi kişisel ve
 
 ![Dinamik Neon OBS widget](docs/images/widget-neon.png)
 
+### OBS Studio içinde
+
+Widget, şeffaf bir Tarayıcı Kaynağı olarak herhangi bir OBS sahnesinin üzerine konumlandırılıp ölçeklendirilebilir.
+
+![OBS Studio içinde kullanılan OBS Now Playing](docs/images/obs-studio-preview.png)
+
 ### Kontrol paneli
 
 ![OBS Now Playing kontrol paneli](docs/images/control-panel.png)
