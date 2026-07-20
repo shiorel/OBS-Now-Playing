@@ -8,6 +8,19 @@ Bu proje, [shiorel](https://github.com/shiorel) yönlendirmesiyle başta OpenAI 
 
 OBS Now Playing, MIT Lisansı altında açık kaynaklıdır. Projeyi kişisel veya ticari amaçlarla kullanabilir, kopyalayabilir, değiştirebilir, geliştirebilir ve yeniden dağıtabilirsiniz. Repository'yi fork ederek istediğiniz yönde geliştirebilirsiniz. Projeyi kullanırken veya yeniden dağıtırken lisans ve telif bildirimini korumanız ve özgün proje sahibi olarak **shiorel** kullanıcı adını belirtmeniz rica edilir.
 
+## Diğer şimdi çalıyor widget'larından farkı nedir?
+
+Birçok şimdi çalıyor widget'ı yalnızca tek bir müzik servisine bağlıdır veya OAuth kurulumu, API anahtarı, kullanıcı hesabı ya da internette barındırılan ek bir servis gerektirir. OBS Now Playing ise Windows medya oturumlarını yerel olarak okuyarak Spotify, Apple Music, YouTube Music, Deezer ve uyumlu tarayıcı oynatıcılarını tek bir widget ile, müzik servisi hesabı veya API anahtarı istemeden destekler.
+
+- **Birden fazla oynatıcı için tek widget:** Önce özel müzik uygulamalarına öncelik verir, gerektiğinde uyumlu tarayıcı medyasına geçer.
+- **Taşınabilir ve kurulum gerektirmez:** ZIP'i çıkartıp uygulamayı çalıştırmak yeterlidir; CMD, web hosting veya installer gerekmez.
+- **Yerel ve gizlilik odaklıdır:** Widget sunucusu yalnızca `127.0.0.1` üzerinde çalışır; şarkı bilgileri analiz veya hesap servislerine gönderilmez.
+- **OBS okunabilirliği için özel tasarlanmıştır:** 400×100 düzen şarkı ve sanatçı adlarını öne çıkarır; uzun şarkı adları üç noktayla kesilmek yerine kaydırılarak gösterilir.
+- **Eksik görselleri tamamlar:** Bulunamayan kapaklar önce Deezer, ardından iTunes Search API üzerinden aranabilir ve indirilen görseller yerel cache içinde saklanır.
+- **Uyarlanabilir Dinamik Neon görünüm:** Neon outline ve vurgu renkleri okunabilirlik korunarak mevcut albüm kapağından otomatik türetilir.
+- **Dahili masaüstü kontrol paneli:** OBS kurulum anlatımı, kopyalanabilir Browser Source adresi, oynatıcı önceliği, boşta gizleme, görsel seçenekleri ve TR/ENG dil kontrolleri tek UX içinde bulunur.
+- **Canlı davranış:** Ayar ve dil değişiklikleri uygulamanın tamamen yeniden başlatılmasına gerek kalmadan açık OBS Browser Source'a ulaşır.
+
 ## Ekran görüntüleri
 
 ### Dinamik Neon widget

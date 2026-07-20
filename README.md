@@ -10,6 +10,19 @@ This project was created entirely with artificial intelligence tools, primarily 
 
 OBS Now Playing is open source under the MIT License. You may use, copy, modify, improve, redistribute, or include it in personal and commercial projects. You are welcome to fork the repository and develop it in any direction. When using or redistributing the project, please retain the license and copyright notice and credit **shiorel** as the original project creator.
 
+## What makes it different from other now-playing widgets?
+
+Many now-playing widgets are tied to a single streaming service, require OAuth setup, API credentials, a user account, or a hosted web service. OBS Now Playing instead reads Windows media sessions locally, allowing one widget to work with Spotify, Apple Music, YouTube Music, Deezer, and compatible browser players without requiring a music-service login or API key.
+
+- **One widget for multiple players:** It prioritizes dedicated music applications and falls back to compatible browser media when necessary.
+- **Portable and installer-free:** Extract the ZIP and run the application; no command prompt, web hosting, or installer is required.
+- **Local and privacy-conscious:** The widget server listens only on `127.0.0.1`; track metadata is not sent to an analytics or account service.
+- **Designed specifically for OBS readability:** The 400×100 layout keeps track and artist names prominent, while long titles scroll instead of being truncated with an ellipsis.
+- **Artwork recovery:** Missing artwork can be found through Deezer, with iTunes Search API as a fallback, while downloaded images are cached locally.
+- **Adaptive Dynamic Neon appearance:** Accent colors are derived from the current album artwork to create a matching neon outline without sacrificing readability.
+- **Built-in desktop control panel:** OBS setup instructions, a copyable Browser Source URL, player priority, idle hiding, artwork options, and bilingual TR/ENG controls are available in one UX.
+- **Live behavior:** Settings and language changes reach the open OBS Browser Source without requiring a complete application restart.
+
 ## Screenshots
 
 ### Dynamic Neon widget
