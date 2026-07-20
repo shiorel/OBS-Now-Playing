@@ -29,6 +29,8 @@ Many now-playing widgets are tied to a single streaming service, require OAuth s
 
 ![Dynamic Neon OBS widget](docs/images/widget-neon.png)
 
+Live Spotify playback shown with **Linkin Park — Faint**.
+
 ### In OBS Studio
 
 The widget can be positioned and scaled as a transparent Browser Source over any OBS scene.

@@ -27,6 +27,8 @@ Birçok şimdi çalıyor widget'ı yalnızca tek bir müzik servisine bağlıdı
 
 ![Dinamik Neon OBS widget](docs/images/widget-neon.png)
 
+Gerçek Spotify oynatımı: **Linkin Park — Faint**.
+
 ### OBS Studio içinde
 
 Widget, şeffaf bir Tarayıcı Kaynağı olarak herhangi bir OBS sahnesinin üzerine konumlandırılıp ölçeklendirilebilir.
