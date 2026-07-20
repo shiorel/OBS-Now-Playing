@@ -25,7 +25,7 @@ Birçok şimdi çalıyor widget'ı yalnızca tek bir müzik servisine bağlıdı
 
 ### Dinamik Neon widget
 
-![Dinamik Neon OBS widget](docs/images/widget-neon.png)
+![Spotify'da Linkin Park Faint çalan Dinamik Neon OBS widget](docs/images/widget-spotify-faint.png)
 
 Gerçek Spotify oynatımı: **Linkin Park — Faint**.
 

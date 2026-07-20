@@ -27,7 +27,7 @@ Many now-playing widgets are tied to a single streaming service, require OAuth s
 
 ### Dynamic Neon widget
 
-![Dynamic Neon OBS widget](docs/images/widget-neon.png)
+![Dynamic Neon OBS widget showing Linkin Park Faint on Spotify](docs/images/widget-spotify-faint.png)
 
 Live Spotify playback shown with **Linkin Park — Faint**.
 
