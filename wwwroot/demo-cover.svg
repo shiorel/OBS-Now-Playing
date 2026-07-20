@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1b1038"/><stop offset=".62" stop-color="#44205c"/><stop offset="1" stop-color="#15142b"/></linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffbd58"/><stop offset=".45" stop-color="#ff5f88"/><stop offset="1" stop-color="#c72cd0"/></linearGradient>
+    <linearGradient id="grid" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#14f2e8"/><stop offset="1" stop-color="#724cfb"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="600" height="600" fill="url(#sky)"/>
+  <g opacity=".55" fill="#fff"><circle cx="76" cy="71" r="2"/><circle cx="128" cy="112" r="1.5"/><circle cx="474" cy="77" r="2"/><circle cx="527" cy="145" r="1.4"/><circle cx="327" cy="58" r="1.4"/><circle cx="238" cy="105" r="1"/></g>
+  <text x="300" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="5" fill="#8ce8ff">THE SYNTH WAVES</text>
+  <text x="300" y="155" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="57" font-style="italic" fill="#ff57d5" filter="url(#glow)">MIDNIGHT</text>
+  <text x="300" y="211" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="55" font-style="italic" fill="#32e7ee" filter="url(#glow)">DREAMS</text>
+  <circle cx="300" cy="333" r="113" fill="url(#sun)" filter="url(#glow)"/>
+  <g stroke="#4b204f" stroke-width="8"><path d="M190 285h220"/><path d="M185 314h230"/><path d="M184 345h232"/><path d="M196 377h208"/></g>
+  <path d="M0 455 110 346l64 58 71-105 56 83 75-91 82 109 49-55 93 111v144H0Z" fill="#12204b" stroke="#24e0ec" stroke-width="4"/>
+  <path d="M0 600V455h600v145" fill="#111530"/>
+  <g stroke="url(#grid)" stroke-width="3" opacity=".85"><path d="M300 400 68 600M300 400 158 600M300 400 241 600M300 400l59 200M300 400l142 200M300 400l232 200"/><path d="M0 485h600M0 525h600M0 565h600"/></g>
+  <path d="M285 430c-8 25-8 53-1 88l-20 82h72l-20-82c7-35 7-63-1-88l13-53-28-19-28 19Z" fill="#11121f"/>
+  <circle cx="300" cy="349" r="20" fill="#10111d"/>
+</svg>

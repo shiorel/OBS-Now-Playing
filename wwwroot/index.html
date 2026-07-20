@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>OBS Now Playing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="widget" class="widget theme-neon is-loading" aria-live="polite">
+    <div class="background" aria-hidden="true"></div>
+    <div class="shine" aria-hidden="true"></div>
+    <svg class="neon-wave" viewBox="0 0 420 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 47 C28 47 28 18 56 18 S84 74 112 74 140 31 168 31 196 59 224 59 252 12 280 12 308 70 336 70 364 40 420 40" />
+      <path d="M0 60 C34 60 34 38 68 38 S102 68 136 68 170 24 204 24 238 54 272 54 306 32 340 32 374 58 420 58" />
+    </svg>
+
+    <section class="cover-wrap">
+      <img id="cover" class="cover" src="demo-cover.svg" alt="Albüm kapağı" />
+      <div class="cover-fallback" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13M9 9l11-2M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm11-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+      </div>
+      <div class="cover-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="content">
+      <header class="top-row">
+        <div class="now-label"><span class="live-dot"></span> <span id="nowLabel">ŞİMDİ ÇALIYOR</span></div>
+        <div id="serviceBadge" class="service-badge">
+          <svg class="service-icon spotify-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.58 14.42a.62.62 0 0 1-.85.2c-2.34-1.43-5.28-1.75-8.75-.96a.62.62 0 1 1-.28-1.2c3.8-.87 7.05-.5 9.68 1.1.3.18.39.57.2.86Zm1.22-2.72a.78.78 0 0 1-1.07.26c-2.68-1.65-6.77-2.13-9.94-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.14-.57 11.2 1.31.37.23.49.71.26 1.09Zm.1-2.84C14.69 6.95 9.4 6.77 6.33 7.7a.94.94 0 1 1-.54-1.8c3.52-1.06 9.36-.85 13.1 1.37a.94.94 0 0 1-.97 1.6Z"/></svg>
+          <svg class="service-icon generic-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 9l11-2M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm11-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+          <span id="serviceName">Spotify</span>
+        </div>
+      </header>
+
+      <div class="track-row">
+        <div class="mini-disc"><img id="miniCover" src="demo-cover.svg" alt="Sanatçı görseli" /><span id="artistAvatarText" class="artist-avatar-text" aria-hidden="true">♪</span></div>
+        <div class="track-text">
+          <div id="titleViewport" class="title-viewport"><h1 id="title">MIDNIGHT DREAMS</h1></div>
+          <p id="artist">THE SYNTH WAVES</p>
+          <p id="album">NEON LIGHTS</p>
+        </div>
+        <div class="heart" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        </div>
+      </div>
+
+      <div class="timeline-area">
+        <div class="progress" role="progressbar" aria-label="Şarkı ilerlemesi">
+          <div id="progressFill" class="progress-fill"></div>
+          <div id="progressKnob" class="progress-knob"></div>
+        </div>
+        <div class="bottom-row">
+          <div id="controls" class="controls">
+            <button id="previous" type="button" aria-label="Önceki parça">
+              <svg viewBox="0 0 24 24"><path d="M6 5h2v14H6V5Zm3.5 7L19 5v14l-9.5-7Z"/></svg>
+            </button>
+            <button id="toggle" class="toggle" type="button" aria-label="Oynat veya duraklat">
+              <svg id="pauseIcon" viewBox="0 0 24 24"><path d="M6 5h4v14H6V5Zm8 0h4v14h-4V5Z"/></svg>
+              <svg id="playIcon" viewBox="0 0 24 24"><path d="m7 4 13 8-13 8V4Z"/></svg>
+            </button>
+            <button id="next" type="button" aria-label="Sonraki parça">
+              <svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2V5ZM5 5l9.5 7L5 19V5Z"/></svg>
+            </button>
+          </div>
+          <div class="time"><span id="elapsed">1:45</span><span class="slash">/</span><span id="duration">3:52</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="idle-state">
+      <div class="idle-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div><strong id="idleTitle">Müzik bekleniyor</strong><span id="idleSubtitle">Spotify veya başka bir oynatıcıdan şarkı başlat</span></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

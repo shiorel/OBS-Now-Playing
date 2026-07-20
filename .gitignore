@@ -1,0 +1,30 @@
+# Runtime data
+log.txt
+log.*.txt
+widget.pid
+image-worker.pid
+covers/*
+!covers/.gitkeep
+artists/*
+!artists/.gitkeep
+
+# Build output and release archives
+OBSNowPlaying.exe
+release/
+bin/
+obj/
+*.pdb
+
+# Editor and operating-system files
+.vs/
+.vscode/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local test data
+.idle-test/
+edge-profile/
+ux-*-check.png
