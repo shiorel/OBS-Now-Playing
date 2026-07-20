@@ -2,6 +2,12 @@
 
 Windows'ta çalan şarkıyı OBS üzerinde gösteren, kurulum gerektirmeyen taşınabilir uygulamadır. Dinamik Neon tema albüm kapağından uygun vurgu rengini yerel olarak çıkarır.
 
+## Projenin hikâyesi ve açık kaynak kullanımı
+
+Bu proje, [shiorel](https://github.com/shiorel) yönlendirmesiyle başta OpenAI ChatGPT ve Codex olmak üzere tamamen yapay zekâ araçları kullanılarak oluşturulmuştur. Proje; sahibinin OBS Studio için pratik, okunabilir ve taşınabilir bir şimdi çalıyor widget'ına duyduğu kişisel ihtiyacı karşılamak amacıyla yapılmıştır. Gereksinimler proje sahibi tarafından belirlenmiş, geliştirme yönlendirilmiş, uygulama test edilmiş ve son ürün yayımlanmıştır.
+
+OBS Now Playing, MIT Lisansı altında açık kaynaklıdır. Projeyi kişisel veya ticari amaçlarla kullanabilir, kopyalayabilir, değiştirebilir, geliştirebilir ve yeniden dağıtabilirsiniz. Repository'yi fork ederek istediğiniz yönde geliştirebilirsiniz. Projeyi kullanırken veya yeniden dağıtırken lisans ve telif bildirimini korumanız ve özgün proje sahibi olarak **shiorel** kullanıcı adını belirtmeniz rica edilir.
+
 ## Ekran görüntüleri
 
 ### Dinamik Neon widget

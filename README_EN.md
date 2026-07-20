@@ -2,6 +2,12 @@
 
 A portable, installation-free Windows application that displays the currently playing track in OBS. Its Dynamic Neon design extracts a suitable accent color locally from the album artwork.
 
+## Project story and open-source use
+
+This project was created entirely with artificial intelligence tools, primarily OpenAI ChatGPT and Codex, under the direction of [shiorel](https://github.com/shiorel). It was built to solve the owner's personal need for a practical, readable, and portable now-playing widget for OBS Studio. The owner defined the requirements, guided the development, tested the application, and published the final result.
+
+OBS Now Playing is open source under the MIT License. You may use, copy, modify, improve, redistribute, or include it in personal and commercial projects. You are welcome to fork the repository and develop it in any direction. When using or redistributing the project, please retain the license and copyright notice and credit **shiorel** as the original project creator.
+
 ## Screenshots
 
 ### Dynamic Neon widget

@@ -4,6 +4,18 @@
 
 A portable, installer-free Windows now-playing widget for OBS Studio. It reads Windows media sessions and displays the active track in a compact 400×100 Dynamic Neon browser source.
 
+## Project story and open-source use
+
+This project was created entirely with artificial intelligence tools, primarily OpenAI ChatGPT and Codex, under the direction of [shiorel](https://github.com/shiorel). It was built to solve the owner's personal need for a practical, readable, and portable now-playing widget for OBS Studio. The owner defined the requirements, guided the development, tested the application, and published the final result.
+
+OBS Now Playing is open source under the MIT License. You may use, copy, modify, improve, redistribute, or include it in personal and commercial projects. You are welcome to fork the repository and develop it in any direction. When using or redistributing the project, please retain the license and copyright notice and credit **shiorel** as the original project creator.
+
+### Projenin hikâyesi ve açık kaynak kullanımı
+
+Bu proje, [shiorel](https://github.com/shiorel) yönlendirmesiyle başta OpenAI ChatGPT ve Codex olmak üzere tamamen yapay zekâ araçları kullanılarak oluşturulmuştur. Proje; sahibinin OBS Studio için pratik, okunabilir ve taşınabilir bir şimdi çalıyor widget'ına duyduğu kişisel ihtiyacı karşılamak amacıyla yapılmıştır. Gereksinimler proje sahibi tarafından belirlenmiş, geliştirme yönlendirilmiş, uygulama test edilmiş ve son ürün yayımlanmıştır.
+
+OBS Now Playing, MIT Lisansı altında açık kaynaklıdır. Projeyi kişisel veya ticari amaçlarla kullanabilir, kopyalayabilir, değiştirebilir, geliştirebilir ve yeniden dağıtabilirsiniz. Repository'yi fork ederek istediğiniz yönde geliştirebilirsiniz. Projeyi kullanırken veya yeniden dağıtırken lisans ve telif bildirimini korumanız ve özgün proje sahibi olarak **shiorel** kullanıcı adını belirtmeniz rica edilir.
+
 ## Screenshots
 
 ### Dynamic Neon widget
