@@ -85,6 +85,7 @@ Double-click the application icon to open the widget in a browser. The right-cli
 ## Features
 
 - Dynamic Neon appearance
+- Four built-in themes selectable from the control panel
 - Event-driven media updates for lower CPU usage
 - Automatic album-art accent color
 - Highly readable track and artist names
@@ -104,6 +105,17 @@ Open the demo from the system tray menu or use:
 `http://127.0.0.1:8974/?demo=1`
 
 ## Configuration
+
+### Themes
+
+Choose a theme from **Settings → Widget theme**, then select **Save and Restart**. Open OBS Browser Sources receive the selected theme automatically.
+
+- Dynamic Neon
+- Minimal Clean Dark
+- Retro Synthwave
+- Cyberpunk Neon Glass
+
+The imported theme CSS files remain separate under `wwwroot/themes/`; the shared HTML, JavaScript, API, language, idle hiding, and long-title marquee behavior are preserved.
 
 Main options in `config.json`:
 

@@ -14,8 +14,8 @@ using System.Reflection;
 
 [assembly: AssemblyTitle("OBS Now Playing")]
 [assembly: AssemblyProduct("OBS Now Playing")]
-[assembly: AssemblyVersion("1.7.1.0")]
-[assembly: AssemblyFileVersion("1.7.1.0")]
+[assembly: AssemblyVersion("1.8.0.0")]
+[assembly: AssemblyFileVersion("1.8.0.0")]
 
 internal sealed class WidgetApplication : ApplicationContext
 {
@@ -137,8 +137,9 @@ internal sealed class WidgetWindow : Form
     private readonly Button en = ButtonOf("ENG", 518, 4, 48, 27);
     private readonly NumericUpDown port = NumberBox(1024,65535), poll = NumberBox(100,5000), idle = NumberBox(0,300);
     private readonly CheckBox hideIdle = CheckOf(""), showAlbum = CheckOf(""), showControls = CheckOf(""), showBadge = CheckOf(""), autoArtist = CheckOf(""), autoCover = CheckOf(""), preview = CheckOf(""), preferredOnly = CheckOf("");
+    private readonly ComboBox themeBox = new ComboBox();
     private readonly TextBox players = new TextBox();
-    private readonly Label[] settingLabels = new Label[5];
+    private readonly Label[] settingLabels = new Label[6];
     private readonly Button save = ButtonOf("", 282, 518, 235, 40);
     private TabPage home, settings;
     public bool AllowExit { get; set; }
@@ -175,8 +176,9 @@ internal sealed class WidgetWindow : Form
         settingLabels[0]=LabelOf("",22,18,500,22,10,true,Color.FromArgb(137,126,255)); settingLabels[1]=LabelOf("",22,48,175,22,9,false,Color.White); port.SetBounds(200,46,70,26); settingLabels[2]=LabelOf("",282,48,170,22,9,false,Color.White); poll.SetBounds(447,46,70,26);
         settingLabels[3]=LabelOf("",22,92,500,22,10,true,Color.FromArgb(137,126,255)); hideIdle.SetBounds(22,120,250,24); idle.SetBounds(447,116,70,26); settingLabels[4]=LabelOf("",282,120,165,22,9,false,Color.White);
         showAlbum.SetBounds(22,150,220,24); showControls.SetBounds(22,178,220,24); showBadge.SetBounds(282,178,220,24); autoArtist.SetBounds(22,224,250,24); autoCover.SetBounds(282,224,235,24); preview.SetBounds(22,258,430,24);
-        players.SetBounds(22,320,495,150); players.Multiline=true; players.ScrollBars=ScrollBars.Vertical; players.BackColor=Color.FromArgb(22,25,35); players.ForeColor=Color.White; players.BorderStyle=BorderStyle.FixedSingle; preferredOnly.SetBounds(22,478,350,24);
-        foreach(Control c in settingLabels) p.Controls.Add(c); foreach(Control c in new Control[]{port,poll,hideIdle,idle,showAlbum,showControls,showBadge,autoArtist,autoCover,preview,players,preferredOnly,save}) p.Controls.Add(c); p.AutoScrollMinSize=new Size(0,580); return p;
+        settingLabels[5]=LabelOf("",22,292,175,22,9,false,Color.White); themeBox.SetBounds(200,288,317,28); themeBox.DropDownStyle=ComboBoxStyle.DropDownList; themeBox.BackColor=Color.FromArgb(22,25,35); themeBox.ForeColor=Color.White; themeBox.Items.AddRange(new object[]{"Dynamic Neon","Minimal Clean Dark","Retro Synthwave","Cyberpunk Neon Glass"});
+        players.SetBounds(22,330,495,140); players.Multiline=true; players.ScrollBars=ScrollBars.Vertical; players.BackColor=Color.FromArgb(22,25,35); players.ForeColor=Color.White; players.BorderStyle=BorderStyle.FixedSingle; preferredOnly.SetBounds(22,478,350,24);
+        foreach(Control c in settingLabels) p.Controls.Add(c); foreach(Control c in new Control[]{port,poll,hideIdle,idle,showAlbum,showControls,showBadge,autoArtist,autoCover,preview,themeBox,players,preferredOnly,save}) p.Controls.Add(c); p.AutoScrollMinSize=new Size(0,580); return p;
     }
 
     public void ApplyLanguage()
@@ -184,19 +186,19 @@ internal sealed class WidgetWindow : Form
         bool t=app.IsTurkish; home.Text=t?"Kurulum":"Setup"; settings.Text=t?"Ayarlar":"Settings"; title.Text="OBS NOW PLAYING"; addressLabel.Text=t?"OBS Tarayıcı Kaynağı adresi":"OBS Browser Source address"; setupTitle.Text=t?"OBS'TE KURULUM":"OBS SETUP";
         setupSteps.Text=t?"1. OBS > Kaynaklar > + > Tarayıcı seç.\n2. Yukarıdaki adresi URL alanına yapıştır.\n3. Genişlik: 400   Yükseklik: 100   FPS: 30 veya 60.\n4. 'Kaynak görünür olmadığında kapat' seçeneğini kapalı bırak.\n5. Desteklenen bir oynatıcıdan müzik başlat.":"1. In OBS, go to Sources > + > Browser.\n2. Paste the address above into the URL field.\n3. Set Width: 400, Height: 100, FPS: 30 or 60.\n4. Keep 'Shutdown source when not visible' disabled.\n5. Start music in a supported player.";
         copy.Text=t?"Kopyala":"Copy"; open.Text=t?"Widget'i Aç":"Open Widget"; demo.Text=t?"Demo Önizleme":"Demo Preview"; restart.Text=t?"Yeniden Başlat":"Restart"; hide.Text=t?"Tray'e Küçült":"Minimize to Tray"; exit.Text=t?"Uygulamayı Kapat":"Exit Application"; trayNote.Text=t?"Pencereyi kapatmak veya küçültmek uygulamayı kapatmaz; sistem tepsisinde çalışmaya devam eder.":"Closing or minimizing this window keeps the application running in the system tray.";
-        settingLabels[0].Text=t?"SUNUCU":"SERVER"; settingLabels[1].Text=t?"Port":"Port"; settingLabels[2].Text=t?"Timeline aralığı (ms)":"Timeline interval (ms)"; settingLabels[3].Text=t?"GÖRÜNÜM VE GÖRSELLER":"APPEARANCE AND ARTWORK"; settingLabels[4].Text=t?"Gizleme gecikmesi (sn)":"Hide delay (sec)";
+        settingLabels[0].Text=t?"SUNUCU":"SERVER"; settingLabels[1].Text=t?"Port":"Port"; settingLabels[2].Text=t?"Timeline aralığı (ms)":"Timeline interval (ms)"; settingLabels[3].Text=t?"GÖRÜNÜM VE GÖRSELLER":"APPEARANCE AND ARTWORK"; settingLabels[4].Text=t?"Gizleme gecikmesi (sn)":"Hide delay (sec)"; settingLabels[5].Text=t?"Widget teması":"Widget theme";
         hideIdle.Text=t?"Müzik yokken widget'i gizle":"Hide widget when idle"; showAlbum.Text=t?"Albüm adını göster":"Show album name"; showControls.Text=t?"Kontrolleri göster":"Show controls"; showBadge.Text=t?"Servis rozetini göster":"Show service badge"; autoArtist.Text=t?"Sanatçı görselini otomatik tamamla":"Fetch artist artwork automatically"; autoCover.Text=t?"Kapağı otomatik tamamla":"Fetch cover automatically"; preview.Text=t?"Uygulama açılınca widget önizlemesini de aç":"Open widget preview at startup"; preferredOnly.Text=t?"Yalnızca listedeki oynatıcıları kullan":"Only use players in this list"; save.Text=t?"Kaydet ve Yeniden Başlat":"Save and Restart";
         tr.BackColor=t?Color.FromArgb(79,67,180):Color.FromArgb(31,35,49); en.BackColor=!t?Color.FromArgb(79,67,180):Color.FromArgb(31,35,49); UpdateStatus();
     }
 
     public void RefreshFromConfig()
     {
-        address.Text=app.Address; var c=Load(); port.Value=Clamp(Int(c,"port",8974),port); poll.Value=Clamp(Int(c,"pollIntervalMs",150),poll); preferredOnly.Checked=Bool(c,"onlyPreferredPlayers",false); autoArtist.Checked=Bool(c,"autoFetchArtistImages",true); autoCover.Checked=Bool(c,"autoFetchCoverImages",true); preview.Checked=Bool(c,"openPreviewOnStart",false); players.Lines=Strings(c,"preferredPlayers"); var w=Obj(c,"widget"); hideIdle.Checked=Bool(w,"hideWhenIdle",false); idle.Value=Clamp(Int(w,"idleHideDelaySeconds",8),idle); showAlbum.Checked=Bool(w,"showAlbum",true); showControls.Checked=Bool(w,"showControls",true); showBadge.Checked=Bool(w,"showServiceBadge",true); UpdateStatus();
+        address.Text=app.Address; var c=Load(); port.Value=Clamp(Int(c,"port",8974),port); poll.Value=Clamp(Int(c,"pollIntervalMs",150),poll); preferredOnly.Checked=Bool(c,"onlyPreferredPlayers",false); autoArtist.Checked=Bool(c,"autoFetchArtistImages",true); autoCover.Checked=Bool(c,"autoFetchCoverImages",true); preview.Checked=Bool(c,"openPreviewOnStart",false); players.Lines=Strings(c,"preferredPlayers"); var w=Obj(c,"widget"); hideIdle.Checked=Bool(w,"hideWhenIdle",false); idle.Value=Clamp(Int(w,"idleHideDelaySeconds",8),idle); showAlbum.Checked=Bool(w,"showAlbum",true); showControls.Checked=Bool(w,"showControls",true); showBadge.Checked=Bool(w,"showServiceBadge",true); themeBox.SelectedIndex=ThemeIndex(StringValue(w,"theme","neon")); UpdateStatus();
     }
 
     private void SaveSettings()
     {
-        try { var c=Load(); c["port"]=(int)port.Value; c["pollIntervalMs"]=(int)poll.Value; c["onlyPreferredPlayers"]=preferredOnly.Checked; c["autoFetchArtistImages"]=autoArtist.Checked; c["autoFetchCoverImages"]=autoCover.Checked; c["openPreviewOnStart"]=preview.Checked; var list=new List<string>(); foreach(string line in players.Lines) if(!String.IsNullOrWhiteSpace(line)) list.Add(line.Trim()); c["preferredPlayers"]=list.ToArray(); var w=Obj(c,"widget"); w["hideWhenIdle"]=hideIdle.Checked; w["idleHideDelaySeconds"]=(int)idle.Value; w["showAlbum"]=showAlbum.Checked; w["showControls"]=showControls.Checked; w["showServiceBadge"]=showBadge.Checked; c["widget"]=w; File.WriteAllText(Path.Combine(app.RootPath,"config.json"),json.Serialize(c),new UTF8Encoding(false)); app.RestartServer(); MessageBox.Show(app.IsTurkish?"Ayarlar kaydedildi ve widget yeniden başlatıldı.":"Settings saved and the widget restarted.","OBS Now Playing"); } catch(Exception ex) { MessageBox.Show((app.IsTurkish?"Ayarlar kaydedilemedi: ":"Could not save settings: ")+ex.Message,"OBS Now Playing"); }
+        try { var c=Load(); c["port"]=(int)port.Value; c["pollIntervalMs"]=(int)poll.Value; c["onlyPreferredPlayers"]=preferredOnly.Checked; c["autoFetchArtistImages"]=autoArtist.Checked; c["autoFetchCoverImages"]=autoCover.Checked; c["openPreviewOnStart"]=preview.Checked; var list=new List<string>(); foreach(string line in players.Lines) if(!String.IsNullOrWhiteSpace(line)) list.Add(line.Trim()); c["preferredPlayers"]=list.ToArray(); var w=Obj(c,"widget"); w["hideWhenIdle"]=hideIdle.Checked; w["idleHideDelaySeconds"]=(int)idle.Value; w["showAlbum"]=showAlbum.Checked; w["showControls"]=showControls.Checked; w["showServiceBadge"]=showBadge.Checked; w["theme"]=ThemeKey(themeBox.SelectedIndex); c["widget"]=w; File.WriteAllText(Path.Combine(app.RootPath,"config.json"),json.Serialize(c),new UTF8Encoding(false)); app.RestartServer(); MessageBox.Show(app.IsTurkish?"Ayarlar kaydedildi ve widget yeniden başlatıldı.":"Settings saved and the widget restarted.","OBS Now Playing"); } catch(Exception ex) { MessageBox.Show((app.IsTurkish?"Ayarlar kaydedilemedi: ":"Could not save settings: ")+ex.Message,"OBS Now Playing"); }
     }
 
     private void UpdateStatus() { status.Text=app.IsServerRunning?(app.IsTurkish?"●  ÇALIŞIYOR — OBS bağlantısına hazır":"●  RUNNING — Ready for OBS"):(app.IsTurkish?"●  BAŞLATILIYOR / BAĞLANTI YOK":"●  STARTING / NO CONNECTION"); status.ForeColor=app.IsServerRunning?Color.FromArgb(54,225,122):Color.FromArgb(255,102,122); address.Text=app.Address; }
@@ -204,6 +206,9 @@ internal sealed class WidgetWindow : Form
     private static Dictionary<string,object> Obj(Dictionary<string,object>s,string k){object v;var d=s.TryGetValue(k,out v)?v as Dictionary<string,object>:null;return d??new Dictionary<string,object>();}
     private static int Int(Dictionary<string,object>s,string k,int f){object v;int n;return s.TryGetValue(k,out v)&&Int32.TryParse(Convert.ToString(v),out n)?n:f;}
     private static bool Bool(Dictionary<string,object>s,string k,bool f){object v,b;return s.TryGetValue(k,out v)&&(b=v)!=null?Convert.ToBoolean(b):f;}
+    private static string StringValue(Dictionary<string,object>s,string k,string f){object v;return s.TryGetValue(k,out v)&&v!=null?Convert.ToString(v):f;}
+    private static int ThemeIndex(string key){string[] keys={"neon","minimal-clean-dark","retro-synthwave","cyberpunk-neon-glass"};int index=Array.IndexOf(keys,key);return index<0?0:index;}
+    private static string ThemeKey(int index){string[] keys={"neon","minimal-clean-dark","retro-synthwave","cyberpunk-neon-glass"};return index>=0&&index<keys.Length?keys[index]:keys[0];}
     private static string[] Strings(Dictionary<string,object>s,string k){var r=new List<string>();object v;if(s.TryGetValue(k,out v)){var a=v as System.Collections.IEnumerable;if(a!=null&&!(v is string))foreach(object x in a)r.Add(Convert.ToString(x));}return r.ToArray();}
     private static decimal Clamp(int n,NumericUpDown b){return Math.Min(b.Maximum,Math.Max(b.Minimum,n));}
     private static Label LabelOf(string s,int x,int y,int w,int h,float z,bool bold,Color c){return new Label{Text=s,Bounds=new Rectangle(x,y,w,h),Font=new Font("Segoe UI",z,bold?FontStyle.Bold:FontStyle.Regular),ForeColor=c,BackColor=Color.Transparent};}

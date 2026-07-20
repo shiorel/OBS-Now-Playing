@@ -3,6 +3,7 @@
 
   const $ = (id) => document.getElementById(id);
   const widget = $('widget');
+  const themeStyles = $('themeStyles');
   const cover = $('cover');
   const artistAvatar = $('miniCover');
   const artistAvatarText = $('artistAvatarText');
@@ -150,6 +151,7 @@
 
   const params = new URLSearchParams(location.search);
   const demo = params.get('demo') === '1';
+  const requestedTheme = params.get('theme');
   cover.addEventListener('load', analyzeCurrentCover);
 
   let config = {
@@ -158,8 +160,27 @@
     showAlbum: true,
     showControls: true,
     showServiceBadge: true,
-    language: 'tr'
+    language: 'tr',
+    theme: 'neon'
   };
+
+  const themes = {
+    neon: { file: 'styles.css', className: 'theme-neon', title: 'Dynamic Neon' },
+    'minimal-clean-dark': { file: 'themes/minimal-clean-dark.css', className: 'theme-minimal', title: 'Minimal Clean Dark' },
+    'retro-synthwave': { file: 'themes/retro-synthwave.css', className: 'theme-retro', title: 'Retro Synthwave' },
+    'cyberpunk-neon-glass': { file: 'themes/cyberpunk-neon-glass.css', className: 'theme-cyberpunk', title: 'Cyberpunk Neon Glass' }
+  };
+
+  function applyTheme() {
+    const configuredTheme = requestedTheme || config.theme;
+    const key = Object.prototype.hasOwnProperty.call(themes, configuredTheme) ? configuredTheme : 'neon';
+    const selected = themes[key];
+    widget.classList.remove('theme-neon', 'theme-minimal', 'theme-retro', 'theme-cyberpunk');
+    widget.classList.add(selected.className);
+    if (themeStyles.getAttribute('href') !== selected.file) themeStyles.setAttribute('href', selected.file);
+    document.title = `OBS Now Playing — ${selected.title}`;
+    requestAnimationFrame(updateTitleMarquee);
+  }
 
   function isTurkish() {
     return String(config.language || 'tr').toLowerCase() === 'tr';
@@ -452,10 +473,10 @@
   }
 
   async function refreshConfig() {
-    if (demo) return;
     try {
       config = { ...config, ...(await fetchJson('/api/config')) };
       applyLanguage();
+      applyTheme();
       if (state) applyState(state);
     } catch { /* Son geçerli ayarlarla devam et. */ }
   }
@@ -496,16 +517,15 @@
   }
 
   async function start() {
-    if (!demo) {
-      try { config = { ...config, ...(await fetchJson('/api/config')) }; } catch { /* defaults */ }
-    }
+    try { config = { ...config, ...(await fetchJson('/api/config')) }; } catch { /* defaults */ }
     applyLanguage();
+    applyTheme();
     clearCover();
     setArtistFallback('');
     await refresh();
     widget.classList.remove('is-loading');
     setInterval(refresh, demo ? 1000 : 150);
-    if (!demo) setInterval(refreshConfig, 2000);
+    setInterval(refreshConfig, 2000);
     requestAnimationFrame(renderTimeline);
   }
 

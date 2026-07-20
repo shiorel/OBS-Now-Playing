@@ -87,6 +87,7 @@ seçenekleri bulunur.
 ## Özellikler
 
 - Dinamik Neon görünüm
+- Kontrol panelinden seçilebilen dört dahili tema
 - Olay tabanlı medya güncellemeleriyle düşük CPU kullanımı
 - Albüm kapağına göre otomatik vurgu rengi
 - Okunabilir şarkı ve sanatçı isimleri
@@ -106,6 +107,17 @@ Demo görünümü sistem tepsisi menüsünden açılabilir veya şu adres kullan
 `http://127.0.0.1:8974/?demo=1`
 
 ## Ayarlar
+
+### Temalar
+
+**Ayarlar → Widget teması** alanından temayı seçip **Kaydet ve Yeniden Başlat** düğmesine bas. Açık OBS Browser Source seçilen temayı otomatik olarak alır.
+
+- Dynamic Neon
+- Minimal Clean Dark
+- Retro Synthwave
+- Cyberpunk Neon Glass
+
+İçe aktarılan tema CSS dosyaları `wwwroot/themes/` altında ayrı tutulur; ortak HTML, JavaScript, API, dil, boşta gizleme ve uzun başlık kaydırma davranışları korunur.
 
 `config.json` dosyasındaki temel seçenekler:
 

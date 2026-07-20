@@ -51,6 +51,7 @@ The widget can be positioned and scaled as a transparent Browser Source over any
 - Prioritized Windows media-session selection
 - Deezer artwork lookup with iTunes Search API fallback
 - Dynamic neon accent colors derived from album artwork
+- Four built-in themes selectable from the control panel
 - Readable artist and track names with marquee animation for long titles
 - Live progress, service badge, and optional playback controls
 - Turkish and English control panel and widget UI
@@ -71,6 +72,17 @@ Download the latest ready-to-run Windows ZIP from the repository's **Releases** 
 5. Keep **Shutdown source when not visible** disabled.
 
 The control panel displays the current URL and lets you copy it. If you change the port, update the Browser Source URL in OBS.
+
+## Themes
+
+Choose a theme from **Settings → Widget theme**, then select **Save and Restart**. Open OBS Browser Sources receive the selected theme automatically.
+
+- Dynamic Neon
+- Minimal Clean Dark
+- Retro Synthwave
+- Cyberpunk Neon Glass
+
+The imported alternative-theme CSS files are kept separately under `wwwroot/themes/`; the shared HTML, JavaScript, API, language, idle hiding, and long-title marquee behavior remain unchanged.
 
 ## Supported sources
 
